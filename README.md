@@ -33,6 +33,8 @@ spring:
 
 ### vue 설정
 
+```vue
 npm install -g @vue/cli
 vue --version
 vue create frontend
+```
