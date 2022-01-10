@@ -18,24 +18,29 @@ export default {
       olMap: undefined,
     }
   },
-  mounted() {
-    this.olMap = new OlMap({
-      target: this.$refs.map,
-      controls : defaults({
-        attribution : false,
-        zoom : false,
-        rotate: false,
-      }),
-      layers: [
-        new OlLayerTile({
-          source: new OSM()
+  methods: {
+    init() {
+      this.olMap = new OlMap({
+        target: this.$refs.map,
+        controls : defaults({
+          attribution : false,
+          zoom : false,
+          rotate: false,
+        }),
+        layers: [
+          new OlLayerTile({
+            source: new OSM()
+          })
+        ],
+        view: new OlView({
+          center: fromLonLat([126.837062, 37.555442]), // 경기도 성남
+          zoom: 10
         })
-      ],
-      view: new OlView({
-        center: fromLonLat([126.837062, 37.555442]), // 경기도 성남
-        zoom: 10
       })
-    })
+    },
+  },
+  mounted() {
+    this.init();
   }
 
 }
