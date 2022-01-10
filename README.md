@@ -29,9 +29,10 @@ spring:
     username: woong
     password: 1234
     driver-class-name: org.postgresql.Driver
-
+```
 
 ### vue 설정
+
 npm install -g @vue/cli
 vue --version
 vue create frontend
